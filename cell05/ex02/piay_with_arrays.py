@@ -1,0 +1,4 @@
+old_array = [1, 3, 5, 7, 9]
+new_array = [num + 2 for num in old_array if num + 2 > 5]
+print("Old Array:", old_array)
+print("New Array:", new_array)
