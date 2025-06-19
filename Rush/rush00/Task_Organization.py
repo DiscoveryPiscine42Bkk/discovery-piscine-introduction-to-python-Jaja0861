@@ -13,7 +13,7 @@ class TaskManager:
 
     def add_task(self, name: str, date: str, task_type: str):
         """เพิ่มงานใหม่"""
-        new_task = FarmTask(name, date, task_type
+        new_task = FarmTask(name, date, task_type)
         self.tasks.append(new_task)
         print ("เพิ่มงานสำเร็จ")
 
@@ -25,17 +25,17 @@ class TaskManager:
 
             print("\รายการงานทั้งหมด : ")
             for i, task in enumerate(self.tasks, 1):
-                print(f"(i}. (task.date} - {task.name? ({task.task type?)”)
+                print(f"{i}. {task.date} - {task.name} ({task.task_type})")
 
     def delete_task(self, task_index: int):
          """ลบงานตามลำดับที่ระบ""" 
          if 1 <= task_index <= len(self.tasks):   
             removed_task = self. tasks.pop(task_index - 1) 
             print (f"ลบงาน: {removed_task.name} แล้ว") 
-        else:
+         else:
             print ("ลำดับงานไม่ถูกต้อง")
 
-    def summarize_ tasks(self):
+    def summarize_tasks(self):
         """สรุปจำนวนงานแต่ละประเภท"""  
         if not self.tasks:
             print ("ยังไม่มีงานในรายการ")    
@@ -46,55 +46,55 @@ class TaskManager:
             type_counts[task.task_type] = type_counts.get (task.task_type, 0) + 1
 
         print ("เกสรุปจำนวนงานแต่ละประเภท:")
-        for task type, count in type_counts.items)():   
-            print (f"- {task_type}: {count) งาน")
+        for task_type, count in type_counts.items():   
+            print(f"- {task_type}: {count} งาน")
 
     def display_menu():
         """แสดงเมนูหลัก""" 
         print("\n" + "="*40)     
-        print("Smart Farm Task Organizen”)
+        print("Smart Farm Task Organizen")
         print("="*40)
         print ("1. เพิ่มงานในฟาร์ม")
         print("2. แสดงรายการงานทั้งหมด")
-        print ("3. ลบงาน"
+        print ("3. ลบงาน")
         print("4. สรุปจำนวนงานในแต่ละประเภท")
         print ("5. ออกจากโปรแกรม")
-        print ("=**40)
+        print ("="*40)
 
-    de f main():
-        manager = TaskManager ()
+    def main():
+        manager = TaskManager()
 
         while True:
             display_menu() 
             choice = input ("เลือกเมนู (1-5) : ").strip()
 
-             if choice == *1":
+            if choice == "1":
                  name = input("ป้อนซื้องาน: ")
                  date = input ("ป้อนวันที่ (dd/mm/yyyy): ")
                  task_type = input ("ประเภทงาน (พืชผัก/ปลูกสัตว์/อีนฯ) : ")
                  manager.add_task(name, date, task_type)
 
-             elif choice == "2":  
+            elif choice == "2":  
                 manager. show_all_tasks()
 
-             elif choice == “3":
+            elif choice == "3":
                 manager-show_all_tasks()
                 if manager.tasks:
                     try:
-                        task_num = int (input(*สำดับของงานที่ต้องการลบ: “))
+                        task_num = int (input("สำดับของงานที่ต้องการลบ: "))
                         manager.delete_task(task_num)
                     except ValueError:
-                    print ("กรุณาป้อนตัวเลขเท่านั้น")  
+                        print("กรุณาป้อนตัวเลขเท่านั้น")  
 
-            elif choice == “4”: 
+            elif choice == "4": 
                 manager.summarize_tasks()
 
-            elir choice == 5: 
-                 print (“\nขอบคุณที่ใช้โปรแกรม Smart Farm!")
-                break
+            elif choice == 5: 
+                 print ("\nขอบคุณที่ใช้โปรแกรม Smart Farm!")
+                 break
 
             else:
                  print ("กรุณาเลือกเมนู 1-5 เท่านั้น")
 
-    if__name__== “__main__”:   
+    if __name__== "__main__":   
         main()                
