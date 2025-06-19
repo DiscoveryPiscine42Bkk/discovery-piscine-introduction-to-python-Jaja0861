@@ -5,10 +5,10 @@ class TaskManager:
     def __init__(self, name: str, date: str, task_type: str):
         self.name = name
         selF.date = date
-        self task_type = task_type
+        self.task_type = task_type
 
 class TaskManager:
-    def__init__(self):
+    def __init__(self):
         self.tasks: List[FarmTask] = []
 
     def add_task(self, name: str, date: str, task_type: str):
@@ -20,10 +20,10 @@ class TaskManager:
     def show_all_tasks(self):
         """แสดงรายการงานทั้งหมด"""
         if not self.tasks:
-            print ("ยังไม่มีงานในรายการ”)
+            print ("ยังไม่มีงานในรายการ")
             return
 
-            print(“\รายการงานทั้งหมด : ")
+            print("\รายการงานทั้งหมด : ")
             for i, task in enumerate(self.tasks, 1):
                 print(f"(i}. (task.date} - {task.name? ({task.task type?)”)
 
